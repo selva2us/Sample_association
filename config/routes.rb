@@ -1,6 +1,16 @@
 SampleAssociation::Application.routes.draw do
-  resources :employees
-
+  resources :employees do 
+	  collection do 
+		    get :employee_autocomplete
+	  end
+	  member do 
+		 get :employee_autocomplete
+	  end
+  end
+  resources :articles
+  resources :comments
+  resources :events
+  resources :photos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
